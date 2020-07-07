@@ -1,0 +1,42 @@
+
+<div class="new-main">
+  <div class="new-main-back">
+
+    <div class="index-header">
+      <h1 class="show-head">NEW</h1>
+    </div>
+    <%@post.errors.full_messages.each do |m|%>
+        <div class="error">
+          <%= m %>
+        </div>
+      <%end%>
+    <%=form_for @post do |f|%>
+      <div class="new-question">
+        <h2>Qestion</h2>
+        <p><i class="fas fa-arrow-right"></i><%= f.text_field :body,:placeholder => " 例）お祝いの日には？" %></p>
+      </div>
+        
+      
+      <div class="new-choice">
+        <div class="new-A">
+          <h2>A</h2>
+          <%= f.text_field :one,:placeholder => " 例）寿司" %>
+        </div>
+        <div class="new-B">
+          <h2>B</h2>
+          <%= f.text_field :two,:placeholder => " 例）焼肉" %>
+        </div>
+      </div>
+      <div class="new-btn">
+        <i class="fas fa-arrow-right"></i><%= f.submit "投稿する" %>
+      </div>
+      
+    <% end %>
+    <div class="new-footer">
+      <%= link_to posts_path,class:"back-to-index" do %>
+        <i class="fas fa-undo"></i>一覧に戻る
+      <%end%>
+    </div>
+
+  </div>
+</div>

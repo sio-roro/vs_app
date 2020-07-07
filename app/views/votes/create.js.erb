@@ -1,0 +1,23 @@
+$('#counter-<%=@post.id%>').html("<%= j(render partial: 'votes/counter', locals: {post: @post}) %>");
+
+
+
+    var id=String(<%=@post.id%>);
+    var one=document.getElementById("one-"+id);
+    var oneNumber=Number(one.innerHTML);
+    var two=document.getElementById("two-"+id);
+    var twoNumber=Number(two.innerHTML);
+
+    var bar1=document.getElementById("barOne-"+id)
+    var bar2=document.getElementById("barTwo-"+id)
+    var sum=oneNumber+twoNumber;
+
+    $(bar1).css('width',(oneNumber/sum)*100+"%").hide().stop(true).animate( { width: 'toggle' }, 'slow' );
+   
+    $(bar2).css('width',(twoNumber/sum)*100+"%").hide().stop(true).animate( { width: 'toggle' }, 'slow' );
+
+
+  
+
+
+    

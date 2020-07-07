@@ -1,0 +1,22 @@
+
+<div class="main">
+  <div class="sign-in-back">
+    <h2>Forgot your password?</h2>
+
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <p>Email</p>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="forget-btn">
+        <p>リセット用のメールを送る</p>
+        <%= f.submit "送信" %>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>
+</div>

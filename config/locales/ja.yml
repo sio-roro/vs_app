@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        body: イベント名
+        one: A
+        two: B 

@@ -1,0 +1,26 @@
+<div class="main">
+  <div class="main-back">
+      <div class="index-header">
+        <%=link_to new_post_path,class:"link-to-new" do %>
+          <p><i class="fas fa-plus"></i>新規投稿</p>
+        <%end%>  
+        <%=link_to user_path(current_user.id),class:"link-to-new" do%>
+          <P><i class="fas fa-user"></i> My page</p>
+        <%end%>
+      </div>
+      
+      <div class="posts">
+        <%@posts.each do |t|%>
+          <div class="post" data-target="<%=t.id%>">
+          </div>
+          <div class="counter" id="counter-<%=t.id%>">
+            <%= render partial: 'votes/counter', locals: { post: t} %>
+          </div>    
+        <%end%>
+      </div>
+  </div>
+</div>
+
+
+
+

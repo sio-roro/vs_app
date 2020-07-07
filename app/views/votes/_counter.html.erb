@@ -1,0 +1,94 @@
+  <% @remaning=Vote.where(post_id:post.id, user_id:current_user.id)%>
+  <%@ones=Vote.where(post_id:post.id,choice:0)%>
+  <%@twos=Vote.where(post_id:post.id,choice:1)%>
+
+    <h3>
+     <%=link_to user_path(post.user.id),class:"user-link" do%>
+        <%=post.user.username%>
+      <%end%>  
+    </h3>
+    <h2><%=post.body%></h2>
+    
+  <%if @remaning.count<3%>
+        <%if @remaning.count===0%>
+          <p class="remaning-counter orange">未投票です。</p>
+        <%else%>
+          <p class="remaning-counter blue">あなたは<%=@remaning.count%>票投票しました</p>
+        <%end%>
+        
+
+        <div class="btn-area">
+          <%=link_to vote_create_path(post.id,0), class:'btn1', method: :post , remote: true do%>
+            <%=post.one%>
+          <%end%>
+
+          <%=link_to vote_create_path(post.id,1), class:'btn2' ,method: :post, remote: true do%>
+            <%=post.two%>
+          <%end%>
+        </div>
+          
+          <%if Vote.find_by(post_id:post.id,user_id:current_user.id)%>
+            <div class="already-chiced">
+
+            <p class="already-chiced-one">
+              <%=post.one%>
+              <%for num in 1..Vote.where(post_id:post.id, user_id:current_user.id, choice:0).count%>
+                <i class="fas fa-hand-paper"></i>
+              <%end%>
+            </p>
+            <p class="already-chiced-two">
+              <%for num in 1..Vote.where(post_id:post.id,user_id:current_user.id,choice:1).count%>
+                <i class="fas fa-hand-paper"></i>
+              <%end%>
+              <%=post.two%>
+            </p>
+          </div>
+          
+             
+      
+          <%else%>
+            <p class="display-none"><div class="count1 display-none" id="one-<%=post.id%>">0</div></p>
+            <p class="display-none"><div class="count2 display-none" id="two-<%=post.id%>">0</div></p>
+          <%end%>
+          
+  <%else%>
+    <p class="remaning-counter gray">3票全て投稿しました</p>
+    
+    <div class="already-chiced">
+
+      <p class="already-chiced-one">
+        <%=post.one%>
+        <%for num in 1..Vote.where(post_id:post.id, user_id:current_user.id, choice:0).count%>
+          <i class="fas fa-hand-paper"></i>
+        <%end%>
+      </p>
+      <p class="already-chiced-two">
+        <%for num in 1..Vote.where(post_id:post.id,user_id:current_user.id,choice:1).count%>
+          <i class="fas fa-hand-paper"></i>
+        <%end%>
+        <%=post.two%>
+      </p>
+    </div>
+
+  <%end%>  
+
+
+    <%if Vote.find_by(post_id:post.id,user_id:current_user.id)%>
+      <div class="bar">
+        <div id="barOne-<%=post.id%>" class="barOne"><div class="count1" id="one-<%=post.id%>"><%=@ones.count%></div></div>
+        <div id="barTwo-<%=post.id%>" class="barTwo"><div class="count2" id="two-<%=post.id%>"><%=@twos.count%></div></div>
+      </div>
+    
+    <%end%>
+
+    <div class="post-menu">
+      <%if current_user ==post.user%>
+        <%=link_to "削除", post_path(post.id), method: :delete,class:"hover-red"%>
+      <%end%>
+      <%=link_to "詳細", post_path(post.id)%>
+      <p class="gray">ID:<div class="gray" id="<%=post.id%>"><%=post.id%></div></p>
+    </div>
+      
+
+
+    

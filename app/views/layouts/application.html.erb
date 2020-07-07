@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VsApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.1/css/all.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+  </head>
+
+  <body>
+  <header>
+    <%if user_signed_in?%>
+      <div class="header-left">
+        <%=link_to user_path(current_user.id) do%>
+          <%=current_user.username%>
+        <%end%>
+      </div>
+      <div class="header-list">
+        <%=link_to 'TOP', root_path%>
+        <%=link_to 'LIST', posts_path%>
+        <%=link_to "NEW", new_post_path%>
+        <%=link_to "LOG OUT", destroy_user_session_path, method: :delete%>
+      </div>
+    <%else%>
+      
+      <%=link_to 'TOP', root_path%>
+      
+      <div class="header-list">
+        <%=link_to "LOG IN",new_user_session_path %>
+        <%=link_to "新規登録",new_user_registration_path%>
+      </div>
+    <%end%>  
+    <%if flash[:notice]%>
+        <div class="flash" id="flash">
+        <%= flash[:notice]%>
+        </div>
+    <%end%>
+  </header>
+  
+    <%= yield %>
+  </body>
+</html>

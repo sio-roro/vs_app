@@ -1,0 +1,59 @@
+<div class="main">
+  <div class="main-back">
+    
+    <div class="index-header">
+      <h1 class="show-head">POST</h1>
+    </div>
+    <div class="new-footer">
+      <%= link_to posts_path,class:"back-to-index" do %>
+        <i class="fas fa-undo"></i>一覧に戻る
+      <%end%>
+    </div>    
+        <div class="post" data-target="<%=@post.id%>">
+        </div>
+        
+      <div class="counter show-box" id="counter-<%=@post.id%>">
+        <%= render partial: 'votes/show-counter', locals: { post: @post} %>
+      </div> 
+
+      
+
+
+      <div class="comment-wapper">
+        <div class="comment-header">
+          <h2>Comment</h2>
+          <%= form_with(model: [@post, @comment], local: true) do |f| %>
+            <div class="comment-btn">
+              <%= f.text_field :comment,:placeholder => "コメントを入力"%>
+              <i class="fas fa-arrow-right"></i><%= f.submit "コメントする" %>
+            </div>
+          <% end %>
+        </div>
+       
+
+        <div class="comment-index">
+          <% @comments.each do |c| %>
+            <div class="comment-index-box">
+              <div class="comment-name">
+                <h3>
+                  <%=link_to user_path(c.user.id),class:"user-link" do%>
+                    <%=c.user.username unless c.user.blank?%>
+                  <%end%>
+                </h3>
+              </div>
+              <div class="comment-content">
+                <p><%= c.comment %></p>
+              </div>
+              <div class="comment-menu">
+                <%if current_user == c.user%>
+                  <%=link_to comment_destroy_path(@post.id), method: :delete do %>
+                    <p>削除</p>
+                  <% end %>  
+                <%end%>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+
+<div class="top1">
+  <h1 id="top1-logo">VS APP</h1>
+</div>
+
+<div class="top2">
+  
+  <div class="contaner">
+    <h1>HAVE WONDERFUL TIME! <br><span>with VS APP</span></h1>
+    <div class="about">
+      <div class="about-text text1">
+        <i class="fas fa-question"></i>
+        <div class="about-text-content">
+        <h3>新しいの疑問の形</h3>
+        <p>”VS APP” では日常の小さな疑問を二択形式でみんなと共有できます。みんなの意見から世界の見方が変わるかもしれません。 </p>
+        </div>
+      </div>
+      <div class="about-text text2">
+        <i class="fas fa-hand-paper"></i>
+        <div class="about-text-content">
+        <h3>新しい多数決の形</h3>
+        <p>"VS APP”の投票は一人3票持ちです。デジタルの世界の”いいね”をつけるか、付けないかだけの白黒世界にグラデーションを提供します。</p>
+        </div>
+      </div>
+      <div class="about-text text3">
+      　<i class="fas fa-expand-arrows-alt"></i>
+        <div class="about-text-content">
+        <h3>新しい議論の形</h3>
+        <p>デジタルがより重視される新しい世界でよりリアルに近い意見交換を実現させましょう。”VS　APP”はかつてない世界を見せてくれます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>  
+
+ <div class="top3">
+      <div class="top3-left">
+        <div class="top3-left-content">
+        <h1>Let's start!</h1>
+        <div class="link-area">
+        <div class="link-area-1">
+         <p><i class="fas fa-arrow-right"></i></p>
+          <%if user_signed_in?%>
+             <%=link_to posts_path, class:"btn" do%>
+              <span>一覧を見る</span><span>Click</span>
+             <%end%> 
+          <%else%>
+            <%=link_to new_user_session_path, class:"btn" do%>
+            <span>ログイン</span><span>Click</span>
+            <%end%>
+          <%end%>  
+        </div>
+        <div class="link-area-1">
+          <p><i class="fas fa-arrow-right"></i></p>
+            <%if user_signed_in?%>
+             <%=link_to new_post_path, class:"btn" do%>
+              <span>新規投稿</span><span>Click</span>
+             <%end%> 
+            <%else%>
+              <%=link_to new_user_registration_path, class:"btn" do%>
+                <span>新規登録</span><span>Click</span>
+              <%end%>
+            <%end%>
+        </div>  
+        </div>
+        </div>
+      </div>
+      <div class="top3-right">
+        <h3> DISCOVER NEW WORLD!!!</h3>
+      </div>
+    </div>
+
+
+    <div class="top4">
+    </div>
+
+    
