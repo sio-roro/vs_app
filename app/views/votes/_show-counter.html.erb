@@ -85,7 +85,7 @@
       <%if current_user ==post.user%>
       <%=link_to "削除", post_path(post.id), method: :delete,class:"hover-red"%>
       <%end%>
-      <p class="id-gray">ID:<div class="id-gray" id="<%=post.id%>"><%=post.id%></div></p>
+      <p class="gray">ID:<div class="gray" id="<%=post.id%>"><%=post.id%></div></p>
     </div>
       
 
