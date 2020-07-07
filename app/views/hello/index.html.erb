@@ -33,6 +33,100 @@
   </div>
 </div>  
 
+<div class="top6">
+  <div class="top6-back">
+    <div class="top6-left">
+      <h1>支持の「深度」</h1>
+      <div class="top6-left-text">
+        <p>
+          Aという本とBという本を比べてみましょう。Aは二人に、Bは四人に指示されています。
+          その人数だけを比べればBはAより優れていますが、本当にそうでしょうか？Aを支持した二人がBの支持者と比べた時により深くAを愛してていたとしたら、
+          AはBに劣っていると単に言えないはずです。
+          ものの良し悪しは決して多数決では必ずしも決まらないのです。
+        </p>
+      </div>
+    </div>
+    <div class="top6-right">
+      <div class="bookA">
+        <div class="bookA-header">
+          <h1>A</h1>
+          <i class="fas fa-book"></i>
+        </div>
+        <div class="bookA-people">
+          <div class="bookA-love">
+            <i class="fas fa-user person"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="bookA-love">
+            <i class="fas fa-user person"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+        
+      </div>
+      <div class="bookB">
+        <div class="bookA-header">
+          <h1>B</h1>
+          <i class="fas fa-book"></i>
+        </div>
+        <div class="bookA-people">
+          <div class="bookB-love">
+            <i class="fas fa-user person"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="bookB-love">
+            <i class="fas fa-user person"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="bookB-love">
+            <i class="fas fa-user person"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="bookB-love">
+            <i class="fas fa-user person"></i>
+            <i class="fas fa-heart"></i>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<%if user_signed_in?%>
+       <div class="top4">
+        <%=link_to posts_path, class:"top4-link" do%>
+          <div class="top4-left gray">
+          <h1>INDEX</h1>
+          </div>
+        <%end%>
+        <%=link_to new_post_path, class:"top4-link" do%>
+          <div class="top4-right gray">
+            <h1>NEW POST</h1>
+          </div>
+        <%end%>
+      </div>
+    <%else%>
+      <div class="top4">
+        <%=link_to new_user_session_path, class:"top4-link" do%>
+          <div class="top4-left gray">
+          <h1>LOG IN</h1>
+          　<p><i class="fas fa-arrow-right"></i>アカウントをお持ちの方</p>
+          </div>
+        <%end%>
+        <%=link_to new_user_registration_path, class:"top4-link" do%>
+          <div class="top4-right gray">
+            <h1>SIGN IN</h1>
+            <p><i class="fas fa-arrow-right"></i>新規登録</p>
+          </div>
+        <%end%>
+      </div>
+    <%end%>
+
  <div class="top3">
       <div class="top3-left">
         <div class="top3-left-content">
@@ -71,7 +165,7 @@
     </div>
 
 
-    <div class="top4">
+    <div class="top5">
     </div>
 
     
