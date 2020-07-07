@@ -33,6 +33,56 @@
   </div>
 </div>  
 
+
+<div class="top3">
+      <div class="top3-left">
+        <div class="top3-left-content">
+        <h1>Let's start!</h1>
+        <div class="link-area">
+        <div class="link-area-1">
+         <p><i class="fas fa-arrow-right"></i></p>
+          <%if user_signed_in?%>
+             <%=link_to posts_path, class:"btn" do%>
+              <span>一覧を見る</span><span>Click</span>
+             <%end%> 
+          <%else%>
+            <%=link_to new_user_session_path, class:"btn" do%>
+            <span>ログイン</span><span>Click</span>
+            <%end%>
+          <%end%>  
+        </div>
+        <div class="link-area-1">
+          <p><i class="fas fa-arrow-right"></i></p>
+            <%if user_signed_in?%>
+             <%=link_to new_post_path, class:"btn" do%>
+              <span>新規投稿</span><span>Click</span>
+             <%end%> 
+            <%else%>
+              <%=link_to new_user_registration_path, class:"btn" do%>
+                <span>新規登録</span><span>Click</span>
+              <%end%>
+            <%end%>
+        </div>  
+        </div>
+        </div>
+      </div>
+      <div class="top3-right">
+        <h3> DISCOVER NEW WORLD!!!</h3>
+      </div>
+    </div>
+
+
+<div class="top7">
+<div class="top7-right">
+<h1>V</h1>
+</div>
+<div class="top7-left">
+<h1>S</h1>
+</div>
+</div>
+
+
+
 <div class="top6">
   <div class="top6-back">
     <div class="top6-left">
@@ -127,42 +177,10 @@
       </div>
     <%end%>
 
- <div class="top3">
-      <div class="top3-left">
-        <div class="top3-left-content">
-        <h1>Let's start!</h1>
-        <div class="link-area">
-        <div class="link-area-1">
-         <p><i class="fas fa-arrow-right"></i></p>
-          <%if user_signed_in?%>
-             <%=link_to posts_path, class:"btn" do%>
-              <span>一覧を見る</span><span>Click</span>
-             <%end%> 
-          <%else%>
-            <%=link_to new_user_session_path, class:"btn" do%>
-            <span>ログイン</span><span>Click</span>
-            <%end%>
-          <%end%>  
-        </div>
-        <div class="link-area-1">
-          <p><i class="fas fa-arrow-right"></i></p>
-            <%if user_signed_in?%>
-             <%=link_to new_post_path, class:"btn" do%>
-              <span>新規投稿</span><span>Click</span>
-             <%end%> 
-            <%else%>
-              <%=link_to new_user_registration_path, class:"btn" do%>
-                <span>新規登録</span><span>Click</span>
-              <%end%>
-            <%end%>
-        </div>  
-        </div>
-        </div>
-      </div>
-      <div class="top3-right">
-        <h3> DISCOVER NEW WORLD!!!</h3>
-      </div>
-    </div>
+
+
+
+ 
 
 
     <div class="top5">
