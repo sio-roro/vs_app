@@ -52,7 +52,7 @@
           <%end%>
           
   <%else%>
-    <p class="remaning-counter gray">3票全て投稿しました</p>
+    <p class="remaning-counter gray-color">3票全て投稿しました</p>
     
     <div class="already-chiced">
 
@@ -85,7 +85,7 @@
       <%if current_user ==post.user%>
       <%=link_to "削除", post_path(post.id), method: :delete,class:"hover-red"%>
       <%end%>
-      <p class="gray">ID:<div class="gray" id="<%=post.id%>"><%=post.id%></div></p>
+      <p class="gray-color">ID:<div class="gray-color" id="<%=post.id%>"><%=post.id%></div></p>
     </div>
       
 

@@ -45,7 +45,7 @@ header a{
   color: #fff;
   
 }
-.gray{
+.gray-color{
   color:#888897
 }
 .blue{
@@ -326,8 +326,7 @@ header a:hover{
   justify-content: center;
   flex-direction: column;
 }
-.top-gray{
-  
+.gray{
   font-size: 20px;
   color:white;
   -webkit-filter: grayscale(100%);
@@ -337,7 +336,7 @@ header a:hover{
 filter: grayscale(100%);
 }
 
-.top-gray:hover {
+.gray:hover{
   font-size: 30px;
   color:#ffc107;
   -webkit-filter: grayscale(0);
