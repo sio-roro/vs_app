@@ -4,8 +4,7 @@
 </div>
 
 <div class="top2">
-  
-  <div class="contaner">
+  <div class="contaner" id="id-top2">
     <h1>HAVE WONDERFUL TIME! <br><span>with VS APP</span></h1>
     <div class="about">
       <div class="about-text text1">
@@ -34,7 +33,8 @@
 </div>  
 
 
-<div class="top3">
+<div class="top3" >
+  
       <div class="top3-left">
         <div class="top3-left-content">
         <h1>Let's start!</h1>
@@ -69,22 +69,23 @@
       <div class="top3-right">
         <h3> DISCOVER NEW WORLD!!!</h3>
       </div>
-    </div>
+  
+</div>
 
 
-<div class="top7">
+<div class="top7" >
 <div class="top7-right">
-<h1>V</h1>
+<h1 id="vs-v">V</h1>
 </div>
 <div class="top7-left">
-<h1>S</h1>
+<h1 id="vs-s">S</h1>
 </div>
 </div>
 
 
 
 <div class="top6">
-  <div class="top6-back">
+  <div class="top6-back" >
     <div class="top6-left">
       <h1>支持の「深度」</h1>
       <div class="top6-left-text">
@@ -148,7 +149,7 @@
 </div>
 
 <%if user_signed_in?%>
-       <div class="top4">
+       <div class="top4" >
         <%=link_to posts_path, class:"top4-link" do%>
           <div class="top4-left gray">
           <h1>INDEX</h1>
@@ -161,7 +162,7 @@
         <%end%>
       </div>
     <%else%>
-      <div class="top4">
+      <div class="top4" >
         <%=link_to new_user_session_path, class:"top4-link" do%>
           <div class="top4-left gray">
           <h1>LOG IN</h1>

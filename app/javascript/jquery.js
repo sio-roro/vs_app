@@ -40,6 +40,29 @@ $('.tab').click(function(){
 });
 
 
+
+$('#id-top2').hide();
+$('#vs-v').hide();
+$('#vs-s').hide();
+
+$(window).scroll(function(){
+  var obj2_t_pos=$('#id-top2').offset().top;
+  var objv_t_pos=$('#vs-v').offset().top;
+  var objs_t_pos=$('#vs-s').offset().top;
+
+  var scr_count=$(document).scrollTop()+ (window.innerHeight/2);
+  if (scr_count>obj2_t_pos){
+    $('#id-top2').fadeIn(2000);
+  }
+  if (scr_count>objv_t_pos+1600){
+    $('#vs-v').animate({'width': 'toggle'},'slow');
+
+  }
+  if (scr_count>objs_t_pos+1600){
+    $('#vs-s').animate({'width': 'toggle'},'slow');
+
+  }
+})
   
   
   
